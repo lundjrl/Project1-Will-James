@@ -106,7 +106,11 @@ class AUDS{
 			}
 			data[currentSize++] = e;
 		}
-
+		
+		/******************************************************
+ 		 * Prints the data in the data structure.
+ 		 * @author William Shreeve
+ 		 * ***************************************************/
 		void printData(){
 			for(int i = 0; i <= currentSize-1; i++){
 				if(i != 0 && i % 10 == 0){
