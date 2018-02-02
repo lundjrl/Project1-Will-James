@@ -80,7 +80,7 @@ class AUDS{
 		T pop(){
 			if(currentSize >= 2){
 				int randIndex = rand() % currentSize;
-				std::swap(data[rand], data[currentSize-1]);
+				std::swap(data[randIndex], data[currentSize-1]);
 				T temp = data[currentSize-1];
 				data[currentSize-1] = NULL;
 				currentSize--;
@@ -106,7 +106,8 @@ class AUDS{
 			if(currentSize == currentMaxSize){
 				increaseSize();
 			}
-			data[currentSize++] = e;
+			data[currentSize] = e;
+			currentSize = currentSize + 1;
 		}
 		
 		/******************************************************
@@ -119,6 +120,7 @@ class AUDS{
 				}
 				std::cout << data[i] << "\t";	
 			}
+			std::cout << std::endl;
 		}
 
 		
@@ -138,7 +140,8 @@ class AUDS{
  		 * the adress to this AUDS.
  		 * ***************************************************/
 		void increaseSize(){
-			T* newData = new T[currentMaxSize * 1.5];
+			currentMaxSize = currentMaxSize * 1.5;
+			T* newData = new T[currentMaxSize];
 			for(int i = 0; i <= currentSize; i++){
 				newData[i] = data[i];
 			}
