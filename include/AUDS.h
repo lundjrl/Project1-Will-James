@@ -114,7 +114,7 @@ class AUDS{
  		 * ***************************************************/
 		void printData(){
 			for(int i = 0; i <= currentSize-1; i++){
-				if(i != 0 && i % 10 == 0){
+				if(i % 10 == 0){
 					std::cout << std:: endl;
 				}
 				std::cout << data[i] << "\t";	
