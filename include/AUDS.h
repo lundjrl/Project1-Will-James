@@ -2,12 +2,21 @@
 #include <cstdlib>
 template <typename T>
 
+/**********************************************************************
+ * AUDS creates a dynamically sized data structure that holds data
+ * of a generic type. Pushing a value adds it to the end of the array.
+ * Popping a value will randomly select a value, then remove it from
+ * the data structure, and replace its spot with the last value of
+ * the data structure.
+ *
+ * @author William Shreeve, James Lund
+ * @version January 2018
+ * *******************************************************************/
 class AUDS{
 	public:
 		/******************************************************
  		 * Constructor for AUDS to make an array of 
  		 * starting size 100 of generic elements
- 		 * @author William Shreeve
  		 * ***************************************************/
 		AUDS(){
 			currentSize = 0;
@@ -17,7 +26,6 @@ class AUDS{
 
 		/******************************************************
  		 * Deconstructor for AUDS to free up memory.
- 		 * @author William Shreeve
  		 * ***************************************************/
 		~AUDS(){
 			delete[] data;
@@ -27,7 +35,6 @@ class AUDS{
   		 * Copy constructor to take parameter AUDS 
  		 * and copy it to this AUDS.
  		 *
- 		 * @author William Shreeve
  		 *
  		 * @param other AUDS to copy to this AUDS
  		 *****************************************************/
@@ -43,8 +50,6 @@ class AUDS{
 		/******************************************************
  		 * Operator function for AUDS to swap the two 
  		 * values of this and other AUDS
- 		 * 
- 		 * @author William Shreeve
  		 *
  		 * @param other AUDS to swap this AUDS with 
  		 *****************************************************/
@@ -69,7 +74,6 @@ class AUDS{
  		 * current size of the array. Swaps it with the
  		 * last element of the list and returns it.
  		 *
- 		 * @author James Lund
  		 *
  		 * @return a random element of the array
  		 * ***************************************************/
@@ -95,8 +99,6 @@ class AUDS{
 		/******************************************************
  		 * Adds the generic element to the end of the array
  		 * list
- 		 * 
- 		 * @author James Lund
  		 *
  		 * @param element to add to data structure
  		 * ***************************************************/
@@ -109,7 +111,6 @@ class AUDS{
 		
 		/******************************************************
  		 * Prints the data in the data structure.
- 		 * @author William Shreeve
  		 * ***************************************************/
 		void printData(){
 			for(int i = 0; i <= currentSize-1; i++){
@@ -135,8 +136,6 @@ class AUDS{
  		 * Creates a new array of size 1.5*current max size
  		 * and copies the data to that array, then assigns
  		 * the adress to this AUDS.
- 		 *
- 		 * @author William Shreeve
  		 * ***************************************************/
 		void increaseSize(){
 			T* newData = new T[currentMaxSize * 1.5];
