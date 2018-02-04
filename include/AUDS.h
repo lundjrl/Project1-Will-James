@@ -121,6 +121,7 @@ class AUDS{
 				std::cout << data[i] << "\t";	
 			}
 			std::cout << std::endl;
+
 		}
 
 		
